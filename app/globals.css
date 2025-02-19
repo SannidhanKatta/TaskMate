@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '@radix-ui/colors/black-alpha.css';
+@import '@radix-ui/colors/green.css';
+@import '@radix-ui/colors/mauve.css';
+@import '@radix-ui/colors/slate.css';
+@import '@radix-ui/colors/violet.css';
+* {
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.15px;
+}
+
+:root {
+  --dark-bg: #0F172A;        /* Dark navy background */
+  --dark-surface: #1E293B;   /* Slightly lighter navy for cards/surfaces */
+  --dark-border: #334155;    /* Subtle border color */
+  --dark-text: #F1F5F9;      /* Light text for dark mode */
+  --dark-text-secondary: #94A3B8;  /* Secondary text for dark mode */
+  
+  --light-bg: #FFFFFF;
+  --light-surface: #F8FAFC;
+  --light-border: #E2E8F0;
+  --light-text: #1E293B;
+  --light-text-secondary: #64748B;
+  
+  --accent: #7C3AED;         /* Purple accent */
+  --accent-hover: #6D28D9;
+}
+
+.ToastRoot[data-swipe='cancel'] {
+  transform: translateX(0);
+  transition: transform 200ms ease-out;
+}
+
+.ToastRoot[data-swipe='end'] {
+  animation: slideRight 100ms ease-out;
+}
+
+
+/* styles.css */
+.ToastRoot[data-swipe='move'] {
+  transform: translateX(var(--radix-toast-swipe-move-x));
+}
+.ToastRoot[data-swipe='cancel'] {
+  transform: translateX(0);
+  transition: transform 200ms ease-out;
+}
+.ToastRoot[data-swipe='end'] {
+  animation: slideRight 100ms ease-out;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(var(--radix-toast-swipe-end-x));
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+html {
+  .kanban-bg {
+
+      background: #F4F7FD;
+
+  }
+}
+
+html.dark {
+  body {
+    background: #17243f;
+  }
+  .kanban-bg {
+    background:#20212C;
+  }
+}
+body {
+
+  letter-spacing: 0.1px;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgb(var(--foreground-rgb));
+  background: #F4F7FD;
+}
+
+h1 {
+  letter-spacing: 0.3px;
+}
+
+h2 {
+  font-size: 15px;
+  font-weight: 700;
+
+}
+
+/* Body (M) */
+h4 {
+ font-size: 12px;
+ font-weight: 700;
+}
+
+.taskmate-bg {
+  @apply h-screen transition-colors duration-200;
+  background-color: var(--light-bg);
+}
+
+.dark .taskmate-bg {
+  background-color: var(--dark-bg);
+}
+
+.board-content {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
