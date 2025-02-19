@@ -14,7 +14,8 @@
     "lint": "next lint && tsc --noEmit",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_7cf23694e3595df"
+    "chromatic": "npx chromatic --project-token=chpt_7cf23694e3595df",
+    "migrate": "prisma migrate deploy"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
