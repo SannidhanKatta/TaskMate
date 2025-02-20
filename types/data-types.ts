@@ -33,10 +33,10 @@ export interface StateT {
 export interface TaskState {
   id: string;
   title: string;
-  description?: string;
+  description: string | null | undefined;
   status: string;
-  subtasks: Subtask[] | [];
   columnId: string;
+  subtasks: Subtask[];
 }
 
 export interface TaskPayload {
