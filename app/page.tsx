@@ -41,7 +41,7 @@ export default async function Home() {
           />
         </Link>
         <Link
-          href="https://github.com/"
+          href="https://github.com/SannidhanKatta/TaskMate"
           target="_blank"
           className="flex items-center space-x-2"
         >

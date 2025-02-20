@@ -182,6 +182,7 @@ const KanbanGrid = ({
         {/* Add Task Button */}
         <AddTaskButton
           isDisabled={state.isDisabled}
+          darkMode={darkMode}
           onClick={() =>
             setState(prev => ({
               ...prev,

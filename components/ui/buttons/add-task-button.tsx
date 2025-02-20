@@ -2,8 +2,8 @@ import { PlusIcon } from "@heroicons/react/24/outline";
 
 interface AddTaskButtonProps {
   isDisabled: boolean;
-  onClick: () => void;
   darkMode: boolean;
+  onClick: () => void;
 }
 
 const AddTaskButton = ({ onClick, darkMode }: AddTaskButtonProps): JSX.Element => {
