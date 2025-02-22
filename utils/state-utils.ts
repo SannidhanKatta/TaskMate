@@ -338,3 +338,55 @@ export const addDeleteBoardEntry = async (id: string) => {
     throw new Error(`Something went wrong on API server: ${errorText}`);
   }
 };
+
+export const updateTaskEntry = async (taskId: string, updates: Partial<TaskState>) => {
+  const res = await fetch(`/api/task/${taskId}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ updates })
+  });
+
+  if (!res.ok) {
+    throw new Error('Failed to update task');
+  }
+
+  return res.json();
+};
+
+export const handleTaskUpdate = async (
+  taskId: string,
+  updates: Partial<TaskState>,
+  setState: React.Dispatch<React.SetStateAction<StateT>>,
+  router: any,
+  boardName: string,
+  boardId: string
+) => {
+  try {
+    await updateTaskEntry(taskId, updates);
+
+    setState(prev => ({
+      ...prev,
+      openModul: false,
+      open: true,
+      toastMsg: {
+        title: "Success",
+        description: "Task updated successfully"
+      }
+    }));
+
+    router.refresh();
+    router.push(`/taskmate/board?board=${boardName}&id=${boardId}`);
+  } catch (error) {
+    console.error('Error updating task:', error);
+    setState(prev => ({
+      ...prev,
+      open: true,
+      toastMsg: {
+        title: "Error",
+        description: "Failed to update task"
+      }
+    }));
+  }
+};

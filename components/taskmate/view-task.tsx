@@ -35,8 +35,7 @@ function ViewTask({
   const addTasks = useStore((state) => state.addTasks);
 
   const [updatedStatus, setUpdatedStatus] = useState(
-    `{"columnId":"${state.columnId}","columnStatus":"${
-      task?.status ? task?.status : "Todo"
+    `{"columnId":"${state.columnId}","columnStatus":"${task?.status ? task?.status : "Todo"
     }", "boardId":"${boardId}"}`
   );
 
