@@ -4,7 +4,10 @@ const Logo = () => {
   const darkMode = useStore((state) => state.darkMode);
 
   return (
-    <div className="flex gap-3 items-center">
+    <div
+      className={`flex gap-3 items-center ${darkMode ? 'bg-[#1E293B]' : 'bg-white'
+        } p-2 rounded-md`}
+    >
       <div className="flex justify-center items-center w-12 h-12">
         <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" stroke="#376f84" strokeWidth="3">

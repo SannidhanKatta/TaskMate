@@ -79,7 +79,8 @@ export default function SideNav({ boards, taskmate }: Readonly<SideNavProps>) {
 `}
       >
         <Link
-          className={`mb-2 flex h-28 items-start justify-start rounded-md ${darkMode ? "bg-[#2B2C37]" : "bg-white"} p-4 md:pt-8 md:h-28`}
+          className={`mb-2 flex h-28 items-start justify-start rounded-md ${darkMode ? "bg-[#1E293B]" : "bg-white"
+            } p-4 md:pt-8 md:h-28`}
           href="/"
         >
           <div className="w-32 text-white md:w-40">
