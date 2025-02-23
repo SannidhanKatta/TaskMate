@@ -45,23 +45,24 @@ export default function SideNav({ boards, taskmate }: Readonly<SideNavProps>) {
 
   if (hideSidenav) {
     return (
-      <>
+      <div className="flex flex-row w-screen">
         <button
           onClick={() => setHideSidenav(false)}
-          className="absolute bottom-0 left-0 w-12 h-12"
+          className="fixed left-0 bottom-8 z-50 w-14 h-12 cursor-pointer"
+          aria-label="Show Sidebar"
         >
-          <div className="absolute bottom-0 left-0 w-full h-12 bg-indigo-500 rounded-tr-full rounded-br-full">
+          <div className="absolute bottom-0 left-0 w-full h-12 bg-[#376f84] hover:bg-[#376f84]/90 transition-colors rounded-tr-full rounded-br-full">
             <Image
-              alt=""
+              alt="Show Sidebar"
               width={16}
               height={10}
-              className="w-[16] h-[10.5px] left-[12px] top-[19px] absolute text-white"
-              src={"/assets/icon-show-sidebar.svg"}
+              className="absolute left-[12px] top-[19px] text-white"
+              src="/assets/icon-show-sidebar.svg"
             />
           </div>
         </button>
         {taskmate}
-      </>
+      </div>
     );
   }
 

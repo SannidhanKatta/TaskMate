@@ -1,6 +1,8 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import Script from 'next/script';
+import InspectionPrevention from '@/components/InspectionPrevention';
 
 export const metadata = {
   metadataBase: new URL("https://postgres-prisma.vercel.app"),
@@ -24,7 +26,10 @@ export default function RootLayout({
     <ClerkProvider>
       <html className={jakarta.variable} lang="en">
         <link rel="icon" href="/assets/favicon-32x32.png" />
-        <body>{children}</body>
+        <body>
+          <InspectionPrevention />
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );
